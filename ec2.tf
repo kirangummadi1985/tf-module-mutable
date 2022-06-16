@@ -18,7 +18,7 @@ resource "aws_ec2_tag" "name-tag" {
   value       = "${var.COMPONENT}-${var.ENV}"
 }
 
-resource "aws_instance_request" "on-demand" {
+resource "aws_instance" "on-demand" {
   count                  = var.ONDEMAND_INSTANCE_COUNT
   ami                    = data.aws_ami.ami.id
   instance_type          = var.NODE_TYPE
