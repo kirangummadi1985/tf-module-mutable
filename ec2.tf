@@ -24,7 +24,6 @@ resource "aws_instance" "on-demand" {
   instance_type          = var.NODE_TYPE
   vpc_security_group_ids = [aws_security_group.main.id]
   subnet_id              = var.SUBNET_IDS[0]
-  wait_for_fulfillment   = true
 
   tags = {
     Name = "${var.COMPONENT}-${var.ENV}"
