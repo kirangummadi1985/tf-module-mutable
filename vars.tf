@@ -9,3 +9,7 @@ variable "WORKSTATION_IP" {}
 variable "SPOT_INSTANCE_COUNT" {}
 variable "ONDEMAND_INSTANCE_COUNT" {}
 variable "PORT" {}
+
+variable "IAM_POLICY_CREATE" {
+  default = false
+}
