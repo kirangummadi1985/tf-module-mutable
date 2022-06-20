@@ -19,3 +19,4 @@ variable "IS_ALB_INTERNAL" {
 }
 
 variable "VPC_ACCESS_TO_ALB" {}
+variable "PRIVATE_HOSTED_ZONE_ID" {}
