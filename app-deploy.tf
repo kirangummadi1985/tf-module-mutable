@@ -4,6 +4,8 @@ resource "null_resource" "app-deploy" {
   }
   count = length(local.ALL_INSTANCE_IPS)
   provisioner "remote-exec" {
+
+
     connection {
       type      = "ssh"
       user      = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["SSH_USERNAME"]
