@@ -25,10 +25,3 @@ variable "DOCDB_ENDPOINT" {
   default = "null"
 }
 
-variable "DOCDB_USERNAME" {
-  default = "null"
-}
-
-variable "DOCDB_PASSWORD" {
-  default = "null"
-}

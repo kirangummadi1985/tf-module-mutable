@@ -12,7 +12,7 @@ resource "null_resource" "app-deploy" {
     }
 
     inline = [
-      "ansible-pull -U https://github.com/kirangummadi1985/roboshop-ansible.git roboshop.yml -e HOST=localhost -e ROLE_NAME=${var.COMPONENT} -e ENV=${var.ENV} -e DBTYPE=DOCUMENTDB -e DOCDB_ENDPOINT=${var.DOCDB_ENDPOINT} -e DOCDB_USERNAME=${var.DOCDB_USERNAME} -e DOCDB_PASSWORD=${var.DOCDB_PASSWORD}"
+      "ansible-pull -U https://github.com/kirangummadi1985/roboshop-ansible.git roboshop.yml -e HOST=localhost -e ROLE_NAME=${var.COMPONENT} -e ENV=${var.ENV} -e DBTYPE=DOCUMENTDB -e DOCDB_ENDPOINT=${var.DOCDB_ENDPOINT} "
     ]
   }
 }
