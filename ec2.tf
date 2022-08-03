@@ -19,6 +19,13 @@ resource "aws_ec2_tag" "name-tag" {
   value       = "${var.COMPONENT}-${var.ENV}"
 }
 
+resource "aws_ec2_tag" "monitor-tag" {
+  count       = var.SPOT_INSTANCE_COUNT
+  resource_id = element(aws_spot_instance_request.spot.*.spot_instance_id, count.index)
+  key         = "Monitor"
+  value       = "yes"
+}
+
 resource "aws_instance" "on-demand" {
   count                  = var.ONDEMAND_INSTANCE_COUNT
   ami                    = data.aws_ami.ami.id
@@ -29,6 +36,7 @@ resource "aws_instance" "on-demand" {
 
   tags = {
     Name = "${var.COMPONENT}-${var.ENV}"
+    Monitor = "yes"
   }
 }
 
